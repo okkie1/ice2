@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ice2
 {
-    class CheeseBurger : Burger
+    class programinheretence : theprogramabstract
     {
         public string gameChoice = " ";
 

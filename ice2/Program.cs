@@ -8,13 +8,13 @@ namespace ice2
     internal class Program
     {
         private static string gameChoice;
-        CheeseBurger choice = new CheeseBurger();
+        programinheretence choice = new programinheretence();
 
         public static string Storychoice { get; private set; }
 
         static void Main(string[] args)
         {
-            CheeseBurger choice = new CheeseBurger();
+            programinheretence choice = new programinheretence();
 
             //Set the console background and foreground colors
             Console.BackgroundColor = ConsoleColor.DarkRed;
@@ -40,7 +40,7 @@ namespace ice2
 
             static void StartStory(SpeechSynthesizer synth)
             {
-                CheeseBurger choice = new CheeseBurger();
+                programinheretence choice = new programinheretence();
                 PrintWithColor(synth, "You find yourself at a two way pass. " +
                     "Do you want to go to the 'forest' pass or the 'highway' pass ?", ConsoleColor.Cyan);
                 

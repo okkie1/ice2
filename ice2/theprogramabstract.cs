@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ice2
 {
-    public abstract class Burger
+    public abstract class theprogramabstract
     {
         private String storychoice = "Bob's Adventure";
         
