@@ -40,6 +40,7 @@ namespace ice2
 
             static void StartStory(SpeechSynthesizer synth)
             {
+                // calling th abstract and inheretence classes so you can use them
                 programinheretence choice = new programinheretence();
                 PrintWithColor(synth, "You find yourself at a two way pass. " +
                     "Do you want to go to the 'forest' pass or the 'highway' pass ?", ConsoleColor.Cyan);
@@ -47,7 +48,7 @@ namespace ice2
                 Console.WriteLine("Type 'Highway' or 'Forest'");
                 choice.gameChoice = Console.ReadLine().ToLower(); ;
                 
-
+                //if function runs through all the options given to it to generate the response needed for the answer given
                 if (choice.gameChoice == "highway")
                 {
                     PrintWithColor(synth, "You take the highway pass and walk next to the road." +
@@ -209,7 +210,7 @@ namespace ice2
                     StartStory(synth);
                 }
             }
-
+            //the print color method to make it work.
             static void PrintWithColor(SpeechSynthesizer synth, string message, ConsoleColor color)
             {
                 Console.ForegroundColor = color;
