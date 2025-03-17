@@ -2,14 +2,18 @@
 using System.Security.Principal;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using System;
+using NAudio.Wave;
 
 namespace ice2
 {
     internal class Program
     {
+        
+        
         private static string gameChoice;
         programinheretence choice = new programinheretence();
-
+        
         public static string Storychoice { get; private set; }
 
         static void Main(string[] args)
@@ -20,7 +24,8 @@ namespace ice2
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.ForegroundColor = ConsoleColor.White;
             Console.Clear();
-            
+            string filePath = @"C:\Users\Udo\Downloads\riser-wildfire-285209.mp3";
+            PlayMp3(filePath);
 
             // Create a new SpeechSynthesizer instancw
             SpeechSynthesizer synth = new SpeechSynthesizer();
@@ -29,6 +34,8 @@ namespace ice2
             synth.SelectVoiceByHints(VoiceGender.Female, VoiceAge.Adult);
 
             //Introduction with colored text
+            
+
             PrintWithColor(synth, "Welcome to the "+ choice.getstorychoice + " 2 way pass Story Narrator!", ConsoleColor.Yellow);
 
             //start the story
@@ -217,6 +224,19 @@ namespace ice2
                 synth.Speak(message);
                 Console.WriteLine(message);
                 Console.ForegroundColor = ConsoleColor.White;
+            }
+
+            static void PlayMp3(string Message)
+            {
+                using (var audioFile = new AudioFileReader(Message))
+                using (var outputDevice = new WaveOutEvent())
+                {
+                    outputDevice.Init(audioFile);
+                    outputDevice.Play();
+
+                    Console.WriteLine("Playing... Press any key to stop.");
+                    Console.ReadKey();
+                }
             }
         }
     }
